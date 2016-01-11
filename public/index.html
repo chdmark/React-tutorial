@@ -14,17 +14,14 @@
   <body>
     <div id="content"></div>
     <script type="text/babel">
-      var CommentBox = React.createClass({
-        render: function() {
-          return (
-            <div className="CommentBox">
-              Hello, world! I am a CommentBox.
-            </div>
-            );
+      var CommentBox = React.createClass({displayName: 'CommentBox', render: function(){
+        return (
+          React.createElement('div', {className: "commentBox"}, "Hello, world! I am a CommentBox.")
+          );
         }
       });
       ReactDOM.render(
-        <CommentBox />,
+        React.createElement(CommentBox, null),
         document.getElementById('content')
         );
     </script>
